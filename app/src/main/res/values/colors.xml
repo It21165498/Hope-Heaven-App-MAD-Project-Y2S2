@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="secondary_color">#00D1FF</color>
+    <color name="primary_color">#FFFFFF</color>
+    <color name="text_hash_color">#7E7E7E</color>
+    <color name="input_hash_color">#F6F6F6</color>
+    <color name="heading_hash">#BCBCBC</color>
+    <color name="warning_red_color">#E03600</color>
 </resources>
