@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        tools:context=".StudentRegister">
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/txt_register"
+            android:textColor="@color/heading_hash"
+            android:textSize="@dimen/headin_txt" />
+
+
+        <EditText
+            android:id="@+id/editTextTextPersonName6"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:paddingLeft="25dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_fixed_bg"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/address"
+            android:paddingLeft="25dp"
+            android:paddingTop="10dp"
+            android:text="Student"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/age"
+            android:inputType="number"
+            android:paddingLeft="25dp"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/editTextTextPersonName8"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/from"
+            android:inputType="textPersonName"
+            android:paddingLeft="25dp"
+            android:paddingTop="10dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName9"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/school"
+            android:inputType="textPersonName"
+            android:paddingLeft="25dp"
+            android:paddingTop="10dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="348dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="25dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/hint_pwd"
+            android:inputType="textPassword"
+            android:paddingLeft="25dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="@dimen/input_field_width"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:ems="10"
+            android:fontFamily="@font/abeezee"
+            android:hint="@string/re_enter_pwd"
+            android:inputType="textPassword"
+            android:paddingLeft="25dp" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="353dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/heading_hash"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/txt_cancel"
+                app:cornerRadius="@dimen/btnRadius"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintHorizontal_bias="0.354"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@color/secondary_color"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/txt_register"
+                app:cornerRadius="@dimen/btnRadius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="75dp" />
+
+    </LinearLayout>
+</ScrollView>
