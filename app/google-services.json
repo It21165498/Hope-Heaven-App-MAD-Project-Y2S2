@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480767308606",
+    "project_id": "mad-project-cd9c0",
+    "storage_bucket": "mad-project-cd9c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480767308606:android:a8e2796c3987cf1424726f",
+        "android_client_info": {
+          "package_name": "com.example.hopeheaven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480767308606-80frprn6irkpggvnc2fr75nglh5a17i3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqF94jhxjVSW2rwItyIGfc-VFJaJTsFF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480767308606-80frprn6irkpggvnc2fr75nglh5a17i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
