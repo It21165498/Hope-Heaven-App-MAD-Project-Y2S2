@@ -49,7 +49,7 @@
             android:hint="@string/address"
             android:paddingLeft="25dp"
             android:paddingTop="10dp"
-            android:text="Student"
+            android:text="Donor"
             android:textSize="18sp" />
 
         <EditText
@@ -91,7 +91,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/school"
+            android:hint="@string/phone"
             android:inputType="textPersonName"
             android:paddingLeft="25dp"
             android:paddingTop="10dp"

@@ -12,6 +12,32 @@
         android:theme="@style/Theme.HopeHeaven"
         tools:targetApi="31">
         <activity
+            android:name=".DonationHistory"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2ddd"
+            android:exported="false"
+            android:label="@string/title_activity_main_activity2ddd" />
+        <activity
+            android:name=".MakeDonation"
+            android:exported="true" >
+
+
+        </activity>
+        <activity
+            android:name=".DonorProfileEdit"
+            android:exported="false" />
+        <activity
+            android:name=".DonorRegister"
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".StudentRegister"
             android:exported="false" />
         <activity
@@ -20,20 +46,12 @@
         <activity
             android:name=".AppIntro"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

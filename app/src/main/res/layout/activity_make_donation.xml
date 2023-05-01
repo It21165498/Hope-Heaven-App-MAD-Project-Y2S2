@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="false">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,17 +13,24 @@
         android:paddingLeft="25dp"
         tools:context=".StudentRegister">
 
+
         <TextView
             android:id="@+id/txtReg"
-            android:layout_width="wrap_content"
+            android:layout_width="245dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/abeezee"
-            android:text="@string/txt_register"
+            android:text="Make Donation"
             android:textColor="@color/heading_hash"
             android:textSize="@dimen/headin_txt" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donor Details"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/editTextDonorName"
@@ -38,20 +46,6 @@
             android:paddingLeft="25dp"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/donor"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_fixed_bg"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/address"
-            android:paddingLeft="25dp"
-            android:paddingTop="10dp"
-            android:text="Student"
-            android:textSize="18sp" />
-
         <EditText
             android:id="@+id/dAge"
             android:layout_width="@dimen/input_field_width"
@@ -61,8 +55,8 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/age"
-            android:inputType="number"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
             android:paddingLeft="25dp"
             android:textSize="18sp" />
 
@@ -76,11 +70,17 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/from"
-            android:inputType="textPersonName"
+            android:hint="@string/phone"
+            android:inputType="phone"
             android:paddingLeft="25dp"
             android:paddingTop="10dp"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donation Details" />
 
         <EditText
             android:id="@+id/dPhone"
@@ -91,7 +91,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/school"
+            android:hint="Category"
             android:inputType="textPersonName"
             android:paddingLeft="25dp"
             android:paddingTop="10dp"
@@ -106,7 +106,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/hint_email"
+            android:hint="Quantity"
             android:inputType="textEmailAddress"
             android:paddingLeft="25dp" />
 
@@ -119,9 +119,10 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/hint_pwd"
+            android:hint="Pick-up location"
             android:inputType="textPassword"
             android:paddingLeft="25dp" />
+
 
         <EditText
             android:id="@+id/dPassword2"
@@ -132,10 +133,9 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="@string/re_enter_pwd"
-            android:inputType="textPassword"
+            android:hint="Date"
+            android:inputType="@string/Date"
             android:paddingLeft="25dp" />
-
 
         <Space
             android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                 android:text="@string/txt_cancel"
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintEnd_toStartOf="@+id/btnReg"
-                app:layout_constraintHorizontal_bias="0.354"
+                app:layout_constraintHorizontal_bias="0.231"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,7 +167,7 @@
                 android:layout_marginEnd="24dp"
                 android:backgroundTint="@color/secondary_color"
                 android:fontFamily="@font/abeezee"
-                android:text="@string/txt_register"
+                android:text="DONATE"
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

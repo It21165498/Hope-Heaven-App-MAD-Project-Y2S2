@@ -8,7 +8,7 @@
     tools:context=".StudentLogin">
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/txtReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/dEmail"
         android:layout_width="@dimen/input_field_width"
         android:layout_height="@dimen/input_field_height"
         android:layout_marginTop="48dp"
@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/txtReg" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/dPassword"
         android:layout_width="350dp"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/dEmail" />
 
     <TextView
         android:id="@+id/textView5"
@@ -64,10 +64,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/dPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnReg"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:layout_marginTop="112dp"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/dPassword" />
 
     <TextView
         android:id="@+id/textView2"

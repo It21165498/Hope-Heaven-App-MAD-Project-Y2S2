@@ -44,4 +44,10 @@
     <string name="view_profile">View Profile</string>
     <string name="donate">Donate</string>
     <string name="edt_profile_undelined"><u>Edit Profile</u></string>
+    <string name="donor_profile">donor profile</string>
+    <string name="title_activity_main_activity2ddd">MainActivity2ddd</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Date">date</string>
 </resources>
