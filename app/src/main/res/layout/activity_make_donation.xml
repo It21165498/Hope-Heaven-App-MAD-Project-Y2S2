@@ -134,7 +134,7 @@
             android:ems="10"
             android:fontFamily="@font/abeezee"
             android:hint="Date"
-            android:inputType="@string/Date"
+            android:inputType="date"
             android:paddingLeft="25dp" />
 
         <Space
