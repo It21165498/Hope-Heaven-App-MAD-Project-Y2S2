@@ -11,27 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HopeHeaven"
         tools:targetApi="31">
+
         <activity
             android:name=".DonationHistory"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
+
         <activity
             android:name=".MainActivity2ddd"
             android:exported="false"
             android:label="@string/title_activity_main_activity2ddd" />
         <activity
             android:name=".MakeDonation"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
+
         <activity
             android:name=".DonorProfileEdit"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
+
         <activity
             android:name=".DonorRegister"
             android:exported="true" >
@@ -42,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".StudentRegister"
             android:exported="false" />
@@ -50,7 +55,7 @@
             android:exported="false" />
         <activity
             android:name=".AppIntro"
-            android:exported="true">
+            android:exported="false">
 
         </activity>
         <activity

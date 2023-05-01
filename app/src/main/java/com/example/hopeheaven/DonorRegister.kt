@@ -1,8 +1,10 @@
 package com.example.hopeheaven
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -31,7 +33,7 @@ class DonorRegister : AppCompatActivity() {
         dialog.show()
     }
 
-    fun submit(v: View){
+    fun submit(v: View) {
         val myForm = DonorRegFormData(
             editTextDonorName.text.toString(),
             dAge.text.toString().toInt(),
@@ -42,21 +44,21 @@ class DonorRegister : AppCompatActivity() {
             dPassword2.text.toString()
         )
         val donorNameValidation = myForm.validateDonorName()
-        val donorAgeValidation=myForm.validateDonorAge()
+        val donorAgeValidation = myForm.validateDonorAge()
         val donorAddressValidation = myForm.validateDonorFrom()
         val donorPhoneValidation = myForm.validateDonorPhone()
-        val donorEmailValidation= myForm.validateDonorEmail()
+        val donorEmailValidation = myForm.validateDonorEmail()
         val donorPasswordValidation = myForm.validateDonorPassword()
         val donorPasswordValidation2 = myForm.validateDonorPassword2()
 
-        when(donorNameValidation){
-            is ValidationResult.Valid ->{
-                count ++
+        when (donorNameValidation) {
+            is ValidationResult.Valid -> {
+                count++
             }
-            is ValidationResult.Invalid ->{
+            is ValidationResult.Invalid -> {
                 editTextDonorName.error = donorNameValidation.errorMessage
             }
-            is ValidationResult.Empty ->{
+            is ValidationResult.Empty -> {
                 editTextDonorName.error = donorNameValidation.errorMessage
             }
         }
@@ -133,10 +135,14 @@ class DonorRegister : AppCompatActivity() {
             }
         }
 
-        if(count==7){
-            displayAlert("Success","You have successfully registered")
+        if (count == 7) {
+            val intent = Intent(this, StudentLogin::class.java)
+            startActivity(intent)
         }
+
     }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -150,5 +156,11 @@ class DonorRegister : AppCompatActivity() {
         dEmail = findViewById(R.id.dEmail)
         dPassword = findViewById(R.id.dPassword)
         dPassword2 = findViewById(R.id.dPassword2)
+
+//        val regBtn = findViewById<Button>(R.id.btnReg)
+//        regBtn.setOnClickListener{
+//            val intent = Intent (this, StudentLogin::class.java)
+//            startActivity(intent)
+//        }
     }
 }
