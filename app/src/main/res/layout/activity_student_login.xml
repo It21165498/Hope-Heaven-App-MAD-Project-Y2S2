@@ -8,7 +8,7 @@
     tools:context=".StudentLogin">
 
     <TextView
-        android:id="@+id/txtReg"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/dEmail"
+        android:id="@+id/etEmail"
         android:layout_width="@dimen/input_field_width"
         android:layout_height="@dimen/input_field_height"
         android:layout_marginTop="48dp"
@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtReg" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
     <EditText
-        android:id="@+id/dPassword"
+        android:id="@+id/etPwd"
         android:layout_width="350dp"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
@@ -50,10 +50,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvForgotPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -64,24 +64,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dPassword" />
-
-    <Button
-        android:id="@+id/btnDonate"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="112dp"
-        android:backgroundTint="@color/secondary_color"
-        android:fontFamily="@font/abeezee"
-        android:text="@string/text_login"
-        app:cornerRadius="@dimen/btnRadius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPwd" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvDontHaveAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -89,13 +75,13 @@
         android:text="@string/dont_have_acc"
         android:textColor="@color/heading_hash"
         android:textSize="@dimen/text_size"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegisterNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvRegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
@@ -107,5 +93,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="116dp"
+        android:backgroundTint="@color/secondary_color"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/text_login"
+        app:cornerRadius="@dimen/btnRadius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPwd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
