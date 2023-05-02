@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/btnReg"
+        android:id="@+id/btnDonate"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:layout_marginTop="124dp"
@@ -68,7 +68,7 @@
         android:fontFamily="@font/abeezee"
         android:text="@string/txt_cancel"
         app:cornerRadius="@dimen/btnRadius"
-        app:layout_constraintEnd_toStartOf="@+id/btnReg"
+        app:layout_constraintEnd_toStartOf="@+id/btnDonate"
         app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
