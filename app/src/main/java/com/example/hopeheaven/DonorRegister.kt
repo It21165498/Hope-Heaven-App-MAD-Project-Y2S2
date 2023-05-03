@@ -229,8 +229,8 @@ class DonorRegister : AppCompatActivity() {
 
         val donorId=dbRef.push().key!!
 
-        val donor = Donor(name,age ,from,phone,email,password,donorId)
-        dbRef.child(donorId).setValue(donor)
+        val donorModel = DonorModel(name,age ,from,phone,email,password,donorId)
+        dbRef.child(donorId).setValue(donorModel)
             .addOnCompleteListener(){
                 Toast.makeText(this,"data inserted successfully",Toast.LENGTH_LONG).show()
             }.addOnFailureListener(){
