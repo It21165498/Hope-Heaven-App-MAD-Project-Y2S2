@@ -18,5 +18,10 @@ class AppIntro : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnDonor.setOnClickListener {
+            val intent = Intent(this, StudentLogin::class.java)
+            startActivity(intent)
+        }
+
     }
 }

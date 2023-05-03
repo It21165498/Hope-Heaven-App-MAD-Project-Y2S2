@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HopeHeaven"
         tools:targetApi="31">
+
+        <activity
+            android:name=".MakeDonation"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".StudentRegister"
             android:exported="false" />
@@ -20,12 +31,8 @@
             android:exported="false" />
         <activity
             android:name=".AppIntro"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

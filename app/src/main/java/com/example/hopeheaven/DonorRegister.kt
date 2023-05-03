@@ -166,13 +166,13 @@ class DonorRegister : AppCompatActivity() {
            startActivity(intent)
         }
 
-        editTextDonorName = findViewById(R.id.editTextDonorName)
-        dAge = findViewById(R.id.dAge)
-        dFrom = findViewById(R.id.dFrom)
-        dPhone = findViewById(R.id.dPhone)
-        dEmail = findViewById(R.id.dEmail)
-        dPassword = findViewById(R.id.dPassword)
-        dPassword2 = findViewById(R.id.dPassword2)
+        editTextDonorName = findViewById(R.id.etName)
+        dAge = findViewById(R.id.mail)
+        dFrom = findViewById(R.id.phone)
+        dPhone = findViewById(R.id.cat)
+        dEmail = findViewById(R.id.qty)
+        dPassword = findViewById(R.id.location)
+        dPassword2 = findViewById(R.id.day)
         subBtn=findViewById(R.id.btnDonate)
 
         dbRef=FirebaseDatabase.getInstance().getReference("Donor")
