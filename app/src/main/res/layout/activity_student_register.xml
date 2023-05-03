@@ -25,7 +25,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/etFullName"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -39,7 +39,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/etRole"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -53,7 +53,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/etAge"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -68,7 +68,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName8"
+            android:id="@+id/etFrom"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -83,7 +83,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName9"
+            android:id="@+id/etSchool"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -98,7 +98,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/etEmail"
             android:layout_width="348dp"
             android:layout_height="46dp"
             android:layout_marginLeft="5dp"
@@ -111,7 +111,7 @@
             android:paddingLeft="25dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/etPwd"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -124,7 +124,7 @@
             android:paddingLeft="25dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/etConfirmPwd"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginLeft="5dp"
@@ -146,7 +146,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnCancel"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
@@ -154,13 +154,13 @@
                 android:fontFamily="@font/abeezee"
                 android:text="@string/txt_cancel"
                 app:cornerRadius="@dimen/btnRadius"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/btnRegister"
                 app:layout_constraintHorizontal_bias="0.354"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnRegister"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
