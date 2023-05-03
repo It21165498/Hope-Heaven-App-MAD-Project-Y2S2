@@ -24,8 +24,8 @@ class StudentLogin : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.text.toString()
-            val pwd = binding.etPwd.text.toString()
+            val email = binding.etEmailLogin.text.toString()
+            val pwd = binding.etPwdLogin.text.toString()
             
             if(email.isNotEmpty() && pwd.isNotEmpty()){
 
