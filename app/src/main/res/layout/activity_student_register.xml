@@ -5,12 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="false">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="25dp"
         tools:context=".StudentRegister">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="410dp"
+                android:layout_height="134dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/authbg" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="220dp"
+                android:layout_height="125dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tvLogin"
@@ -19,89 +45,26 @@
             android:layout_marginLeft="120dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/abeezee"
+            android:paddingLeft="25dp"
             android:text="@string/txt_register"
             android:textColor="@color/heading_hash"
             android:textSize="@dimen/headin_txt" />
 
 
-        <EditText
-            android:id="@+id/etFullName"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/full_name"
-            android:inputType="textPersonName"
-            android:paddingLeft="25dp"
-            android:textSize="18sp" />
-
         <TextView
-            android:id="@+id/etRole"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_fixed_bg"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/address"
-            android:paddingLeft="25dp"
-            android:paddingTop="10dp"
-            android:text="Student"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/etAge"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/age"
-            android:inputType="number"
-            android:paddingLeft="25dp"
-            android:textSize="18sp" />
-
-
-        <EditText
-            android:id="@+id/etFrom"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/from"
-            android:inputType="textPersonName"
-            android:paddingLeft="25dp"
-            android:paddingTop="10dp"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/etSchool"
-            android:layout_width="@dimen/input_field_width"
-            android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:fontFamily="@font/abeezee"
-            android:hint="@string/school"
-            android:inputType="textPersonName"
-            android:paddingLeft="25dp"
-            android:paddingTop="10dp"
-            android:textSize="18sp" />
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/acc_info"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="348dp"
             android:layout_height="46dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/input_bg"
             android:ems="10"
@@ -114,7 +77,7 @@
             android:id="@+id/etPwd"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:ems="10"
@@ -127,7 +90,7 @@
             android:id="@+id/etConfirmPwd"
             android:layout_width="@dimen/input_field_width"
             android:layout_height="@dimen/input_field_height"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/input_bg"
             android:ems="10"
@@ -137,9 +100,216 @@
             android:paddingLeft="25dp" />
 
 
-        <Space
+        <RadioGroup
+            android:id="@+id/rgStuOrDon"
             android:layout_width="match_parent"
-            android:layout_height="39dp" />
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            >
+
+
+            <RadioButton
+                android:id="@+id/rbStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_student"
+                android:layout_marginLeft="50dp"
+                android:checked="true"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/rbDonor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_donor"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"/>
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/studentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/student_info"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/full_name"
+                android:inputType="textPersonName"
+                android:paddingLeft="25dp"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etSchool"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/school"
+                android:inputType="textPersonName"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etAge"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/age"
+                android:inputType="number"
+                android:paddingLeft="25dp"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/etFrom"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/from"
+                android:inputType="textPersonName"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/phone"
+                android:inputType="number"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:checked="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"/>
+            </RadioGroup>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/donorContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvDonorPersDet"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/donor_info"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etDonorName"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/full_name"
+                android:inputType="textPersonName"
+                android:paddingLeft="25dp"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etDonorAge"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/age"
+                android:inputType="number"
+                android:paddingLeft="25dp"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etDonorFrom"
+                android:layout_width="@dimen/input_field_width"
+                android:layout_height="@dimen/input_field_height"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:fontFamily="@font/abeezee"
+                android:hint="@string/from"
+                android:inputType="textPersonName"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
+
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="353dp"
@@ -149,6 +319,7 @@
                 android:id="@+id/btnCancel"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/heading_hash"
                 android:fontFamily="@font/abeezee"
@@ -164,7 +335,6 @@
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="24dp"
                 android:backgroundTint="@color/secondary_color"
                 android:fontFamily="@font/abeezee"
                 android:text="@string/txt_register"

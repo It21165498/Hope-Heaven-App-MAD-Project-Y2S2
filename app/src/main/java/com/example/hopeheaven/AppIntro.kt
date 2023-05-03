@@ -13,8 +13,13 @@ class AppIntro : AppCompatActivity() {
         binding = ActivityAppIntroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnStudent.setOnClickListener {
+        binding.btnLogin1.setOnClickListener {
             val intent = Intent(this, StudentLogin::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnRegister1.setOnClickListener {
+            val intent = Intent(this, StudentRegister::class.java)
             startActivity(intent)
         }
 

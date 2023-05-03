@@ -26,6 +26,8 @@
     <string name="from">From</string>
     <string name="gender">Gender</string>
     <string name="priciple_certificate">Principle Certificate</string>
+    <string name="student_info">Student Details</string>
+    <string name="donor_info">Donor Details</string>
     <string name="personal_info">Personal Information</string>
     <string name="achievements">Achievements</string>
     <string name="needs">Needs</string>
@@ -44,4 +46,7 @@
     <string name="view_profile">View Profile</string>
     <string name="donate">Donate</string>
     <string name="edt_profile_undelined"><u>Edit Profile</u></string>
+    <string name="acc_info">Account Details</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>
