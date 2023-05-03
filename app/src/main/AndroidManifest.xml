@@ -16,6 +16,12 @@
         <activity
             android:name=".MakeDonation"
             android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".DonationHistory"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
