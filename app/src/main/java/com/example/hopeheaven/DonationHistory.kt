@@ -1,7 +1,9 @@
 package com.example.hopeheaven
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -15,7 +17,7 @@ class DonationHistory : AppCompatActivity() {
     private lateinit var donationRecycleView:RecyclerView
     private lateinit var dbRef:DatabaseReference
     private lateinit var donationArrayList: ArrayList<DonationModel>
-
+    private lateinit var backBtn : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +30,21 @@ class DonationHistory : AppCompatActivity() {
 
         donationArrayList = arrayListOf<DonationModel>()
         getDonationData()
+
+        backBtn = findViewById(R.id.btnBack)
+        backBtn.setOnClickListener {
+            val intent = Intent(this, DonationHistory::class.java)
+            intent.putExtra("FRAGMENT_TO_LOAD", "MY_FRAGMENT")
+            startActivity(intent)
+            finish()
+        }
+        val fragmentToLoad = intent.getStringExtra("FRAGMENT_TO_LOAD")
+        if (fragmentToLoad == "MY_FRAGMENT") {
+            supportFragmentManager.beginTransaction().replace(R.id.dnr, DonorProfile()).commit()
+        }
+
+
+
 
     }
 
@@ -54,4 +71,7 @@ class DonationHistory : AppCompatActivity() {
 
     })
     }
+
+
+
 }

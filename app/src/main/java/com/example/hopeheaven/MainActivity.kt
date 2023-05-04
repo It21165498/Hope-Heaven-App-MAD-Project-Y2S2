@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.icon_profile -> if(isStudent) {
                         replaceFragment(StudentProfile())
                     } else {
-                        // replaceFragment(donorprofile fragment should be here)
+                         replaceFragment(DonorProfile())
                     }
                     else -> {
                         // handle other menu item clicks
