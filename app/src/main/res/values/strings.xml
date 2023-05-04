@@ -49,4 +49,6 @@
     <string name="acc_info">Account Details</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="email">Email</string>
+    <string name="log_out"><u>Log Out</u></string>
 </resources>
