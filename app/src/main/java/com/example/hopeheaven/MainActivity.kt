@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.icon_home -> replaceFragment(Home())
                 R.id.icon_students -> replaceFragment(StudentsList())
-//                R.id.icon_donors -> replaceFragment()
+                R.id.icon_donors -> replaceFragment(DonorList())
                 R.id.icon_profile -> replaceFragment(StudentProfile())
 
                 else -> {
-
+                    replaceFragment(DonorProfile())
                 }
 
             }

@@ -1,6 +1,7 @@
 package com.example.hopeheaven
 
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -74,7 +75,7 @@ class DonorList : Fragment() {
 
         donorRecyclerView= view.findViewById(R.id.readDonorsRecyclerView)
         donorRecyclerView.layoutManager=LinearLayoutManager(context)
-        adapter=DonorAdapter()
+        adapter= DonorAdapter()
         donorRecyclerView.adapter= adapter
 
         viewModel=ViewModelProvider(this).get(DonorViewModel::class.java)

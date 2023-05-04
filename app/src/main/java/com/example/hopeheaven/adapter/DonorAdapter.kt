@@ -30,7 +30,7 @@ class DonorAdapter : RecyclerView.Adapter<DonorAdapter.DonorViewHolder>() {
 
         holder.name.text = currentDonor.name
         holder.email.text=currentDonor.email
-        holder.age.text=currentDonor.age
+        holder.age.text = currentDonor.age.toString()
         holder.from.text=currentDonor.from
     }
 
