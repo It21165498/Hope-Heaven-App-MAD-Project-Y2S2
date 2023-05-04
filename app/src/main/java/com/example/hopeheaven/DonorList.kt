@@ -1,10 +1,18 @@
 package com.example.hopeheaven
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.hopeheaven.adapter.DonorAdapter
+import com.example.hopeheaven.models.DonorViewModel
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,6 +24,10 @@ private const val ARG_PARAM2 = "param2"
  * Use the [DonorList.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+private lateinit var viewModel: DonorViewModel
+private lateinit var donorRecyclerView: RecyclerView
+private lateinit var adapter: DonorAdapter
 class DonorList : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -55,5 +67,21 @@ class DonorList : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        donorRecyclerView= view.findViewById(R.id.readDonorsRecyclerView)
+        donorRecyclerView.layoutManager=LinearLayoutManager(context)
+        adapter=DonorAdapter()
+        donorRecyclerView.adapter= adapter
+
+        viewModel=ViewModelProvider(this).get(DonorViewModel::class.java)
+
+        viewModel.allDonors.observe(viewLifecycleOwner, Observer {
+            adapter.updateDonorList(it)
+        })
+
     }
 }
