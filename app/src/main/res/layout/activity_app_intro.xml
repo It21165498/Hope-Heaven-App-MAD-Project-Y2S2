@@ -18,12 +18,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/tvHopeHeaven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/abeezee"
-        android:text="@string/welcome_text"
+        android:text="@string/app_name"
         android:textSize="@dimen/headin_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
@@ -36,77 +36,49 @@
         android:layout_height="243dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@+id/tvHopeHeaven"
         app:srcCompat="@drawable/online_donation" />
 
     <TextView
-        android:id="@+id/tvWhoAreYou"
+        android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/who_are_you"
+        android:layout_marginTop="28dp"
+        android:text="@string/welcome_text"
         android:textColor="@color/primary_color"
-        android:textSize="16sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgSticker" />
 
     <Button
-        android:id="@+id/btnStudent"
+        android:id="@+id/btnLogin1"
         android:layout_width="330dp"
         android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:backgroundTint="@color/primary_color"
-        android:text="@string/btn_student"
-        android:textColor="@color/text_hash_color"
-        app:cornerRadius="@dimen/btnRadius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhoAreYou" />
-
-    <Button
-        android:id="@+id/btnDonor"
-        android:layout_width="330dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/primary_color"
-        android:text="@string/btn_donor"
+        android:text="@string/text_login"
         android:textColor="@color/text_hash_color"
         app:cornerRadius="@dimen/btnRadius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStudent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
-    <TextView
-        android:id="@+id/tvAlrdyAcc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/Alrdy_acc"
-        android:textColor="@color/primary_color"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/btnRegister1"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="@string/txt_register"
+        android:textColor="@color/text_hash_color"
+        app:cornerRadius="@dimen/btnRadius"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvLogInLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:clickable="true"
-        android:fontFamily="@font/abeezee"
-        android:text="@string/login_link_text"
-        android:textColor="@color/primary_color"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toEndOf="@+id/tvAlrdyAcc" />
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
