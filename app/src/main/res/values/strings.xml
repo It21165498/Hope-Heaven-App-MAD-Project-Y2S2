@@ -46,17 +46,10 @@
     <string name="view_profile">View Profile</string>
     <string name="donate">Donate</string>
     <string name="edt_profile_undelined"><u>Edit Profile</u></string>
-<<<<<<< HEAD
-    <string name="donor_profile">donor profile</string>
-    <string name="title_activity_main_activity2ddd">MainActivity2ddd</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="Date">date</string>
-</resources>
-=======
     <string name="acc_info">Account Details</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="title_home" />
+    <string name="title_dashboard" />
+    <string name="title_notifications" />
 </resources>
->>>>>>> thilini
