@@ -42,6 +42,21 @@
         </LinearLayout>
 
 
+        <ImageView
+            android:id="@+id/ivProPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/profilepic" />
+
+        <TextView
+            android:id="@+id/tvChangePic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="135dp"
+            android:text="@string/change_pro_pic"
+            android:textColor="@color/secondary_color" />
+
         <TextView
             android:id="@+id/textView33"
             android:layout_width="wrap_content"
