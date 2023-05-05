@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +17,7 @@ class DonorProfileEdit : AppCompatActivity()  {
     private lateinit var editTextAge: EditText
     private lateinit var editTextEmail: EditText
     private lateinit var editTextFrom: EditText
+    private lateinit var tvDelete:TextView
     private lateinit var updateButton: Button
     private lateinit var cancelButton: Button
 
@@ -30,6 +32,7 @@ class DonorProfileEdit : AppCompatActivity()  {
         editTextAge = findViewById(R.id.editTextTextPersonName4)
         editTextEmail = findViewById(R.id.editTextTextPostalAddress)
         editTextFrom = findViewById(R.id.editTextTextPersonName2)
+        tvDelete   = findViewById(R.id.textView8)
         updateButton = findViewById(R.id.btnDonate)
         cancelButton=  findViewById(R.id.btnCancel)
 
@@ -63,6 +66,12 @@ class DonorProfileEdit : AppCompatActivity()  {
             val intent = Intent(this, DonorProfile::class.java)
             startActivity(intent)
         }
+
+        tvDelete.setOnClickListener {
+            val intent = Intent(this, DonorProfileDelete::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun updateUserData() {
@@ -70,6 +79,13 @@ class DonorProfileEdit : AppCompatActivity()  {
         val age = editTextAge.text.toString()
         val email = editTextEmail.text.toString()
         val from = editTextFrom.text.toString()
+
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+        if (!email.matches(emailPattern.toRegex())) {
+            Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_LONG).show()
+            return
+        }
+
 
         val userUpdates = hashMapOf<String, Any>(
             "name" to name,
