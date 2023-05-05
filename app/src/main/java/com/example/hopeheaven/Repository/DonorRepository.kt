@@ -5,11 +5,14 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.hopeheaven.models.DonorModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.Exception
 
 class DonorRepository {
+    val user = FirebaseAuth.getInstance().currentUser // Get the Firebase Authentication user object
+    val fireStoreDatabase = FirebaseFirestore.getInstance() //Get firestore db
     private val firestoreReference: CollectionReference =
         FirebaseFirestore.getInstance().collection("Users")
     @Volatile

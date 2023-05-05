@@ -15,7 +15,7 @@ class DonorAdapter : RecyclerView.Adapter<DonorAdapter.DonorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonorViewHolder {
         val donorView = LayoutInflater.from(parent.context).inflate(
-            R.layout.donation_list,
+            R.layout.donor_list,
             parent,false
         )
         return DonorViewHolder(donorView)
