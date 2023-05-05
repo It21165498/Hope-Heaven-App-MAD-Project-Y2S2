@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.util.regex.Pattern
 
 class MakeDonation : AppCompatActivity() {
 
@@ -56,9 +57,13 @@ class MakeDonation : AppCompatActivity() {
         }
         if (Email.isEmpty()) {
             email.error="please enter email"
+        }else if(!Pattern.matches("^\\S+@\\S+\\.\\S+\$", Email)){
+            email.error="Please enter valid email"
         }
         if (Phone.isEmpty()) {
             phone.error="please enter phone number"
+        }else if(!Pattern.matches("^[+]?[0-9]{10,13}\$", phone.toString())){
+            phone.error="Please enter a valid phone number"
         }
         if (Category.isEmpty()) {
             category.error="please enter category"
@@ -80,7 +85,7 @@ class MakeDonation : AppCompatActivity() {
 
         dbRef.child(donationId).setValue(donation)
             .addOnCompleteListener {
-                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Your donation recorded successfully", Toast.LENGTH_LONG).show()
 
                 fname.text.clear()
                 email.text.clear()
