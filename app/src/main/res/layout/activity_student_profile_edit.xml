@@ -54,8 +54,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="135dp"
-            android:text="@string/change_pro_pic"
+            android:text="@string/select_pro_pic"
             android:textColor="@color/secondary_color" />
+
+        <Button
+            android:id="@+id/tvUploadImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary_color"
+            android:text="Upload Image"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/btnRadius" />
 
         <TextView
             android:id="@+id/textView33"
@@ -361,7 +370,7 @@
             android:fontFamily="@font/abeezee"
             android:paddingLeft="20dp"
             android:text="@string/delete_acc"
-            android:textColor="@color/secondary_color"
+            android:textColor="@color/warning_red_color"
             android:textSize="16sp"
             android:textStyle="bold" />
 

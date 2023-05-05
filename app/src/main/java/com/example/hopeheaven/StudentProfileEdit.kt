@@ -1,8 +1,11 @@
 package com.example.hopeheaven
 
+import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
@@ -13,9 +16,17 @@ import com.example.hopeheaven.databinding.ActivityStudentLoginBinding
 import com.example.hopeheaven.databinding.ActivityStudentProfileEditBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageMetadata
+import com.google.firebase.storage.ktx.storage
+import com.squareup.picasso.Picasso
 
 class StudentProfileEdit : AppCompatActivity() {
     private lateinit var binding : ActivityStudentProfileEditBinding
+    private var storageReference = Firebase.storage
+    private lateinit var uri: Uri
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,9 +42,16 @@ class StudentProfileEdit : AppCompatActivity() {
         val gender = intent.getStringExtra("gender")
         val achievements = intent.getStringExtra("achievements")
         val needs = intent.getStringExtra("needs")
+        val proPic = intent.getStringExtra("proPic")
 
 
         Log.d("myresult", "DATA" + name + age + school + phone + email + from + gender)
+
+        if (proPic != "null") {
+            Picasso.get().load(proPic).into(binding.ivProPic)
+        } else {
+            // Handle this case accordingly, such as displaying a default image instead
+        }
 
         binding.etNameInput?.setText(name)
         binding.etAgeInput?.setText(age)
@@ -157,6 +175,7 @@ class StudentProfileEdit : AppCompatActivity() {
         }
 
 
+
         // Set the fixed size of the ImageView container
         val imageSize = resources.getDimensionPixelSize(R.dimen.image_size)
         binding.ivProPic.layoutParams.width = imageSize
@@ -171,20 +190,76 @@ class StudentProfileEdit : AppCompatActivity() {
         layoutParams.setMargins(margin, 0, 0, 0)
         binding.ivProPic.layoutParams = layoutParams
 
+        val pickImage = registerForActivityResult(
+            ActivityResultContracts.GetContent(),
+            ActivityResultCallback { uri ->
+                // Display the selected image in the ImageView
+                binding.ivProPic.setImageURI(uri)
+                binding.tvUploadImg.visibility = View.VISIBLE
+
+                // Store the selected image URI in a class variable for later use
+                if (uri != null) {
+                    this.uri = uri
+                }
+            }
+        )
+
         binding.tvChangePic.setOnClickListener {
-            pickImage.launch("image/")
+            // Launch the activity to select an image
+            pickImage.launch("image/*")
+
+        }
+
+        binding.tvUploadImg.setOnClickListener {
+            // Check if an image has been selected
+            if (uri != null) {
+                // Upload the selected image to Firebase Storage
+                storageReference = FirebaseStorage.getInstance()
+                val user = FirebaseAuth.getInstance().currentUser // Get the Firebase Authentication user object
+                val fireStoreDatabase = FirebaseFirestore.getInstance() //Get firestore db
+                storageReference.getReference("images").child(user?.uid.toString()).child("profile.jpg")
+                    .putFile(uri!!)
+                    .addOnSuccessListener { task->
+                        task.metadata!!.reference!!.downloadUrl
+                            .addOnSuccessListener { downloadUrl ->
+                                Picasso.get().load(downloadUrl).into(binding.ivProPic)
+                                Toast.makeText(this, "Profile Picture Updated Successfully", Toast.LENGTH_SHORT).show()
+
+                                val imageUpload = hashMapOf(
+                                    "profilePic" to downloadUrl.toString()
+                                )
+
+                                fireStoreDatabase.collection("UsersPhotos")
+                                    .document(user?.uid.toString())
+                                    .set(imageUpload, SetOptions.mergeFields("profilePic"))
+                                    .addOnSuccessListener {
+                                        Toast.makeText(this, "Image URL stored in Firestore", Toast.LENGTH_SHORT).show()
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        Toast.makeText(this, "Firestore Error: ${exception.message}", Toast.LENGTH_SHORT).show()
+                                    }
+
+
+                            }
+                    }
+                    .addOnFailureListener { exception ->
+                        // Handle any errors that occur during the image upload
+                        Toast.makeText(this, "Image Upload Failed: ${exception.message}", Toast.LENGTH_SHORT).show()
+                    }
+            } else {
+                Toast.makeText(this, "Please select an image to upload", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+        binding.tvDeleteAcc.setOnClickListener {
+            val intent = Intent(this, StudentProfileDelete::class.java)
+            startActivity(intent)
         }
 
 
     }
 
-    val pickImage = registerForActivityResult(
-        ActivityResultContracts.GetContent(),
-        ActivityResultCallback {
-            binding.ivProPic.setImageURI(it)
-
-        }
-    )
 
 }
 

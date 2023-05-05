@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.hopeheaven.databinding.FragmentStudentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 class StudentProfile : Fragment() {
 
@@ -28,6 +30,7 @@ class StudentProfile : Fragment() {
     lateinit var school: String
     lateinit var achievements : String
     lateinit var needs : String
+    lateinit var proPic : String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +55,7 @@ class StudentProfile : Fragment() {
                     school = documentSnapshot.getString("school").toString()
                     achievements = documentSnapshot.getString("achievements").toString()
                     needs = documentSnapshot.getString("needs").toString()
+                    proPic = documentSnapshot.getString("profilePic").toString()
 
 
                     binding.tvNameInput.text = name
@@ -70,6 +74,24 @@ class StudentProfile : Fragment() {
                         binding.tvNeeds.text = "No Needs"
                     }else{
                         binding.tvNeeds.text = needs
+                    }
+
+                    if(proPic != "null"){
+                        // Set the fixed size of the ImageView container
+                        val imageSize = resources.getDimensionPixelSize(R.dimen.image_size)
+                        binding.ivProfilePic.layoutParams.width = imageSize
+                        binding.ivProfilePic.layoutParams.height = imageSize
+
+                        // Set the scaleType to centerCrop
+                        binding.ivProfilePic.scaleType = ImageView.ScaleType.CENTER_CROP
+
+                        // Set the left margin of the ImageView container
+                        val margin = resources.getDimensionPixelSize(R.dimen.image_margin_left)
+                        val layoutParams = binding.ivProfilePic.layoutParams as ViewGroup.MarginLayoutParams
+                        layoutParams.setMargins(margin, 0, 0, 0)
+                        binding.ivProfilePic.layoutParams = layoutParams
+                        Picasso.get().load(proPic).into(binding.ivProfilePic)
+
                     }
 
 
@@ -99,6 +121,9 @@ class StudentProfile : Fragment() {
             i.putExtra("gender", gender)
             i.putExtra("achievements",achievements)
             i.putExtra("needs",needs)
+            if(proPic != "null"){
+                i.putExtra("proPic",proPic)
+            }
 
             activity.startActivity(i)// Start the StudentLogin activity
 
