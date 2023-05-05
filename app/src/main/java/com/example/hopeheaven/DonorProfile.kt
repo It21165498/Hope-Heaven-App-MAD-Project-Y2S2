@@ -20,6 +20,7 @@ class DonorProfile : Fragment() {
     val user = FirebaseAuth.getInstance().currentUser
     val fireStoreDatabase = FirebaseFirestore.getInstance()
     lateinit var myButton: Button
+    lateinit var edtBtn:Button
 
 
 
@@ -37,6 +38,7 @@ class DonorProfile : Fragment() {
         }
 
 
+
         fireStoreDatabase.collection("Users").document(user?.uid.toString()).get()
             .addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
@@ -52,6 +54,16 @@ class DonorProfile : Fragment() {
                     binding.textView28.text = email
                     binding.textView24.text = from
 
+                    edtBtn=binding.btnEditDonorP
+                    edtBtn.setOnClickListener {
+                        val intent = Intent(activity, DonorProfileEdit::class.java)
+                        intent.putExtra("name", name)
+                        intent.putExtra("age", age)
+                        intent.putExtra("email", email)
+                        intent.putExtra("from", from)
+                        startActivity(intent)
+
+                    }
 
 
 
