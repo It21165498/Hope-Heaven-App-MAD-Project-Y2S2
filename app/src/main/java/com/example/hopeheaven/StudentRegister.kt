@@ -88,7 +88,9 @@ class StudentRegister : AppCompatActivity() {
                                 "age" to age,
                                 "phone" to phone,
                                 "gender" to selectedGender,
-                                "userType" to "Student"
+                                "userType" to "Student",
+                                "achievements" to "",
+                                "needs" to ""
                             )
 
                         }else{

@@ -193,7 +193,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/tvAchievements"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -203,7 +203,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/tvNeeds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
@@ -235,7 +235,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/ivCertificate"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
@@ -262,7 +262,7 @@
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivCertificate" />
 
                 <View
                     android:id="@+id/divider2"
@@ -272,7 +272,7 @@
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView35" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvAchievements" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

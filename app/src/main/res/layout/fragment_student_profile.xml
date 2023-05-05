@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/abeezee"
             android:text="@string/student_profile"
             android:textSize="32dp" />
 
@@ -30,10 +31,11 @@
             android:src="@drawable/profilepic" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/tvEditProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="170dp"
+            android:fontFamily="@font/abeezee"
             android:text="@string/edt_profile_undelined"
             android:textColor="@color/secondary_color" />
 
@@ -56,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/needs"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -68,6 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/personal_info"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -80,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/achievements"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -92,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="Horopathana maha vidyalaya"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/full_name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -113,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/age"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvNameInput" />
@@ -123,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/scl"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvAgeInput" />
@@ -133,6 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/phone"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvSclInput" />
@@ -143,6 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/email"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvPhoneInput" />
@@ -153,6 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/from"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvEmailInput" />
@@ -163,6 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/gender"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvFromInput" />
@@ -173,6 +186,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="@string/priciple_certificate"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvGenderInput" />
@@ -183,6 +197,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="Amal Perera"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -194,27 +209,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="15"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/tvAchievements"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="Grade 7 class 1st, Carrom Championship 2nd"
+                    android:fontFamily="@font/abeezee"
+                    android:text="No Achievements"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/tvNeeds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
-                    android:text="1 school bag, a pair of black color shoe"
+                    android:fontFamily="@font/abeezee"
+                    android:text="No Needs"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView37" />
@@ -226,6 +244,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="Horopathana"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -237,13 +256,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="Male"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/ivCertificate"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
@@ -258,6 +278,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="0771234567"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -270,7 +291,7 @@
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivCertificate" />
 
                 <View
                     android:id="@+id/divider2"
@@ -280,7 +301,7 @@
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView35" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvAchievements" />
 
                 <TextView
                     android:id="@+id/tvEmailInput"
@@ -288,6 +309,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/abeezee"
                     android:text="amalperera@gmail.com"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -304,6 +326,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="170dp"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/abeezee"
             android:text="@string/log_out"
             android:textColor="@color/secondary_color"
             android:textSize="20sp" />

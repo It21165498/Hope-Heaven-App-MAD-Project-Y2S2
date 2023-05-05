@@ -19,7 +19,15 @@ class StudentProfile : Fragment() {
     private lateinit var binding: FragmentStudentProfileBinding
     // Get the Firebase Authentication user object
     lateinit var auth : FirebaseAuth
-
+    lateinit var age: String
+    lateinit var email: String
+    lateinit var from: String
+    lateinit var gender: String
+    lateinit var name: String
+    lateinit var phone: String
+    lateinit var school: String
+    lateinit var achievements : String
+    lateinit var needs : String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,13 +43,16 @@ class StudentProfile : Fragment() {
             .addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
                     // Get the data from the document snapshot
-                    val age = documentSnapshot.getString("age").toString()
-                    val email = documentSnapshot.getString("email").toString()
-                    val from = documentSnapshot.getString("from").toString()
-                    val gender = documentSnapshot.getString("gender").toString()
-                    val name = documentSnapshot.getString("name").toString()
-                    val phone = documentSnapshot.getString("phone").toString()
-                    val school = documentSnapshot.getString("Student").toString()
+                    age = documentSnapshot.getString("age").toString()
+                    email = documentSnapshot.getString("email").toString()
+                    from = documentSnapshot.getString("from").toString()
+                    gender = documentSnapshot.getString("gender").toString()
+                    name = documentSnapshot.getString("name").toString()
+                    phone = documentSnapshot.getString("phone").toString()
+                    school = documentSnapshot.getString("school").toString()
+                    achievements = documentSnapshot.getString("achievements").toString()
+                    needs = documentSnapshot.getString("needs").toString()
+
 
                     binding.tvNameInput.text = name
                     binding.tvAgeInput.text = age
@@ -50,6 +61,18 @@ class StudentProfile : Fragment() {
                     binding.tvEmailInput.text = email
                     binding.tvFromInput.text = from
                     binding.tvGenderInput.text = gender
+                    if (achievements == ""){
+                        binding.tvAchievements.text = "No Achievements"
+                    }else{
+                        binding.tvAchievements.text = achievements
+                    }
+                    if (needs == ""){
+                        binding.tvNeeds.text = "No Needs"
+                    }else{
+                        binding.tvNeeds.text = needs
+                    }
+
+
 
 
 
@@ -60,6 +83,26 @@ class StudentProfile : Fragment() {
             .addOnFailureListener { exception ->
                 Log.d("", "Error getting document: $exception")
             }
+
+
+        binding.tvEditProfile.setOnClickListener {
+
+            // Get the hosting Activity
+            val activity = requireActivity()
+            val i = Intent(activity, StudentProfileEdit::class.java)
+            i.putExtra("name", name)
+            i.putExtra("age", age)
+            i.putExtra("school", school)
+            i.putExtra("phone", phone)
+            i.putExtra("email", email)
+            i.putExtra("from", from)
+            i.putExtra("gender", gender)
+            i.putExtra("achievements",achievements)
+            i.putExtra("needs",needs)
+
+            activity.startActivity(i)// Start the StudentLogin activity
+
+        }
 
         binding.tvLogOut.setOnClickListener {
             auth.signOut()
