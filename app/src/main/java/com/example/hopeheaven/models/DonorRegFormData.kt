@@ -5,12 +5,12 @@ import java.util.regex.Pattern
 
 class DonorRegFormData(
     private var donorName:String,
-    private var donorAge: Int = -1,
-    private var donorFrom: String,
+    private var category: String,
+    private var QTY: String,
     private var donorPhone: Int,
     private var donorEmail: String,
-    private var donorPassword: String,
-    private var donorPassword2: String,
+    private var pickupLoc: String,
+    private var pickUpDay: String,
 ) {
     fun validateDonorName(): ValidationResult {
         return if(donorName.isEmpty()){
@@ -20,19 +20,17 @@ class DonorRegFormData(
         }
     }
 
-    fun validateDonorAge(): ValidationResult {
-        return if (donorAge == -1) {
-            ValidationResult.Empty("Please enter your age")
-        } else if (donorAge <= 0) {
-            ValidationResult.Invalid("Please enter a valid age")
-        } else {
+    fun validateCategory(): ValidationResult {
+        return if(category.isEmpty()){
+            ValidationResult.Empty("Please enter category")
+        }else{
             ValidationResult.Valid
         }
     }
 
-    fun validateDonorFrom(): ValidationResult {
-        return if(donorFrom.isEmpty()){
-            ValidationResult.Empty("Please enter your address")
+    fun validateQTY(): ValidationResult {
+        return if(QTY.isEmpty()){
+            ValidationResult.Empty("Please enter quantity")
         }else{
             ValidationResult.Valid
         }
@@ -58,22 +56,18 @@ class DonorRegFormData(
         }
     }
 
-    fun validateDonorPassword(): ValidationResult {
-        return  if (donorPassword.isEmpty()) {
-            ValidationResult.Empty("Pease ceate a password")
-        }else if (donorPassword.length < 5) {
-            ValidationResult.Invalid("Password must be at least 5 characters long")
-        } else {
+    fun validatePickupLocation(): ValidationResult {
+        return  if (pickupLoc.isEmpty()) {
+            ValidationResult.Empty("Pease ceate a pickup place")
+        }else {
             ValidationResult.Valid
         }
     }
 
-    fun validateDonorPassword2(): ValidationResult {
-        return  if (donorPassword2.isEmpty()) {
-            ValidationResult.Empty("Please re enter your password")
-        } else if (donorPassword2 != donorPassword) {
-            ValidationResult.Invalid("Passwords do not match")
-        } else {
+    fun validatePickUpDate(): ValidationResult {
+        return  if (pickUpDay.isEmpty()) {
+            ValidationResult.Empty("Please re enter pickup date")
+        }else {
             ValidationResult.Valid
         }
     }

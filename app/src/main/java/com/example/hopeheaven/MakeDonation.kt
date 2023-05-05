@@ -19,6 +19,7 @@ class MakeDonation : AppCompatActivity() {
     private lateinit var location: EditText
     private lateinit var date: EditText
     private lateinit var btnSaveData: Button
+    var count :Int =0
 
     private lateinit var dbRef: DatabaseReference
 
@@ -43,7 +44,7 @@ class MakeDonation : AppCompatActivity() {
         }
     }
 
-    private fun saveDonationData(){
+    private fun saveDonationData() {
         val fName = fname.text.toString()
         val Email = email.text.toString()
         val Phone = phone.text.toString()
@@ -52,54 +53,65 @@ class MakeDonation : AppCompatActivity() {
         val Location = location.text.toString()
         val Date = date.text.toString()
 
+        var isValid = true
+
         if (fName.isEmpty()) {
-            fname.error="please enter name"
+            fname.error = "please enter name"
+            isValid = false
         }
         if (Email.isEmpty()) {
-            email.error="please enter email"
-        }else if(!Pattern.matches("^\\S+@\\S+\\.\\S+\$", Email)){
-            email.error="Please enter valid email"
+            email.error = "please enter email"
+            isValid = false
+        } else if (!Pattern.matches("^\\S+@\\S+\\.\\S+\$", Email)) {
+            email.error = "please enter valid email"
+            isValid = false
         }
         if (Phone.isEmpty()) {
-            phone.error="please enter phone number"
-        }else if(!Pattern.matches("^[+]?[0-9]{10,13}\$", phone.toString())){
-            phone.error="Please enter a valid phone number"
+            phone.error = "please enter phone number"
+            isValid = false
+        } else if (phone.length() != 10) {
+            phone.error = "please enter valid phone number"
+            isValid = false
         }
         if (Category.isEmpty()) {
-            category.error="please enter category"
+            category.error = "please enter category"
+            isValid = false
         }
         if (Qty.isEmpty()) {
-            qty.error="please enter quantity"
+            qty.error = "please enter quantity"
+            isValid = false
         }
         if (Location.isEmpty()) {
-            location.error="please enter pickup location"
+            location.error = "please enter pickup location"
+            isValid = false
         }
         if (Date.isEmpty()) {
-            date.error="please enter pickup date"
+            date.error = "please enter pickup date"
+            isValid = false
         }
 
-        val donationId = dbRef.push().key!!
+        if (isValid) {
+            val donationId = dbRef.push().key!!
 
-        val donation = DonationModel(donationId, fName, Email, Category,Qty,Location,Date)
+            val donation = DonationModel(donationId, fName, Email, Category,Qty,Location,Date)
 
+            dbRef.child(donationId).setValue(donation)
+                .addOnCompleteListener {
+                    Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
-        dbRef.child(donationId).setValue(donation)
-            .addOnCompleteListener {
-                Toast.makeText(this, "Your donation recorded successfully", Toast.LENGTH_LONG).show()
-
-                fname.text.clear()
-                email.text.clear()
-                phone.text.clear()
-                category.text.clear()
-                qty.text.clear()
-                location.text.clear()
-                date.text.clear()
-
-
-            }.addOnFailureListener { err ->
-                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
-
-
+                    fname.text.clear()
+                    email.text.clear()
+                    phone.text.clear()
+                    category.text.clear()
+                    qty.text.clear()
+                    location.text.clear()
+                    date.text.clear()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                }
+        } else {
+            Toast.makeText(this, "Please fill in all the required fields correctly", Toast.LENGTH_LONG).show()
+        }
     }
+
 }
