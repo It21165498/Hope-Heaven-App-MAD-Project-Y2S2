@@ -3,7 +3,11 @@ package com.example.hopeheaven
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hopeheaven.databinding.ActivityStudentLoginBinding
 import com.example.hopeheaven.databinding.ActivityStudentProfileEditBinding
@@ -153,15 +157,34 @@ class StudentProfileEdit : AppCompatActivity() {
         }
 
 
+        // Set the fixed size of the ImageView container
+        val imageSize = resources.getDimensionPixelSize(R.dimen.image_size)
+        binding.ivProPic.layoutParams.width = imageSize
+        binding.ivProPic.layoutParams.height = imageSize
 
+        // Set the scaleType to centerCrop
+        binding.ivProPic.scaleType = ImageView.ScaleType.CENTER_CROP
 
+        // Set the left margin of the ImageView container
+        val margin = resources.getDimensionPixelSize(R.dimen.image_margin_left)
+        val layoutParams = binding.ivProPic.layoutParams as ViewGroup.MarginLayoutParams
+        layoutParams.setMargins(margin, 0, 0, 0)
+        binding.ivProPic.layoutParams = layoutParams
 
-
-
-
-
-
+        binding.tvChangePic.setOnClickListener {
+            pickImage.launch("image/")
+        }
 
 
     }
+
+    val pickImage = registerForActivityResult(
+        ActivityResultContracts.GetContent(),
+        ActivityResultCallback {
+            binding.ivProPic.setImageURI(it)
+
+        }
+    )
+
 }
+
