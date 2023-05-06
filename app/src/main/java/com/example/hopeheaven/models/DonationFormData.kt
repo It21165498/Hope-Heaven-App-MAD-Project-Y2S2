@@ -3,7 +3,7 @@ package models
 import models.validations.ValidationResult
 import java.util.regex.Pattern
 
-class DonorRegFormData(
+class DonationFormData(
     private var donorName:String,
     private var category: String,
     private var QTY: String,

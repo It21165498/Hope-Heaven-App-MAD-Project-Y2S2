@@ -177,27 +177,28 @@
                 android:id="@+id/btnCancel"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/heading_hash"
                 android:fontFamily="@font/abeezee"
                 android:text="@string/txt_cancel"
                 app:cornerRadius="@dimen/btnRadius"
-                app:layout_constraintEnd_toStartOf="@+id/btnDonate"
-                app:layout_constraintHorizontal_bias="0.354"
+                app:layout_constraintEnd_toStartOf="@+id/btnDPupdate"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btnDonate"
+                android:id="@+id/btnDPupdate"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="64dp"
                 android:backgroundTint="@color/secondary_color"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/update"
+                android:text="UPDATE"
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

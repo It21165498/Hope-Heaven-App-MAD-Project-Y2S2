@@ -34,7 +34,7 @@ class DonorProfileEdit : AppCompatActivity()  {
         editTextEmail = findViewById(R.id.editTextTextPostalAddress)
         editTextFrom = findViewById(R.id.editTextTextPersonName2)
         tvDelete   = findViewById(R.id.textView8)
-        updateButton = findViewById(R.id.btnDonate)
+        updateButton = findViewById(R.id.btnDPupdate)
         cancelButton=  findViewById(R.id.btnCancel)
 
         updateButton.setOnClickListener {
@@ -64,7 +64,7 @@ class DonorProfileEdit : AppCompatActivity()  {
             }
 
         cancelButton.setOnClickListener {
-            val intent = Intent(this, DonorProfile::class.java)
+            val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
 

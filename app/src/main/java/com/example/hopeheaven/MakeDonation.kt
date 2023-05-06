@@ -11,14 +11,14 @@ import java.util.regex.Pattern
 
 class MakeDonation : AppCompatActivity() {
 
-    private lateinit var fname: EditText
-    private lateinit var email: EditText
-    private lateinit var phone: EditText
-    private lateinit var category: EditText
-    private lateinit var qty: EditText
-    private lateinit var location: EditText
-    private lateinit var date: EditText
-    private lateinit var btnSaveData: Button
+   lateinit var fname: EditText
+     lateinit var email: EditText
+     lateinit var phone: EditText
+     lateinit var category: EditText
+     lateinit var qty: EditText
+     lateinit var location: EditText
+     lateinit var date: EditText
+     lateinit var btnSaveData: Button
     var count :Int =0
 
     private lateinit var dbRef: DatabaseReference
@@ -44,7 +44,7 @@ class MakeDonation : AppCompatActivity() {
         }
     }
 
-    private fun saveDonationData() {
+     fun saveDonationData() {
         val fName = fname.text.toString()
         val Email = email.text.toString()
         val Phone = phone.text.toString()
