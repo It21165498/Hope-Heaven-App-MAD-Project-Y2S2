@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(Home())
 
+
         val fragmentId = intent.getIntExtra("fragment", R.id.icon_home)
         val menuItem = binding.NavBar.menu.findItem(fragmentId)
         binding.NavBar.selectedItemId = menuItem.itemId

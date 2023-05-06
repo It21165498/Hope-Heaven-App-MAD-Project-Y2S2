@@ -42,6 +42,11 @@ class StudentProfile : Fragment() {
         var user = auth.currentUser
         val fireStoreDatabase = FirebaseFirestore.getInstance()
 
+        fireStoreDatabase.collection("UsersPhotos").document(user?.uid.toString()).get()
+            .addOnSuccessListener {
+                proPic = it.getString("profilePic").toString()
+            }
+
         fireStoreDatabase.collection("Users").document(user?.uid.toString()).get()
             .addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
@@ -55,7 +60,7 @@ class StudentProfile : Fragment() {
                     school = documentSnapshot.getString("school").toString()
                     achievements = documentSnapshot.getString("achievements").toString()
                     needs = documentSnapshot.getString("needs").toString()
-                    proPic = documentSnapshot.getString("profilePic").toString()
+
 
 
                     binding.tvNameInput.text = name

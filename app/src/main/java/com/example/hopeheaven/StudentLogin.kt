@@ -17,6 +17,11 @@ class StudentLogin : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        val user = firebaseAuth.currentUser
+        if(user != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.tvRegisterNow.setOnClickListener {
             val intent = Intent(this, StudentRegister::class.java)
