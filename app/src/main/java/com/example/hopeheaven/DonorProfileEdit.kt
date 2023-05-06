@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -104,4 +105,6 @@ class DonorProfileEdit : AppCompatActivity()  {
                 Toast.makeText(this, "Error updating user data: $exception", Toast.LENGTH_LONG).show()
             }
     }
+
+
 }

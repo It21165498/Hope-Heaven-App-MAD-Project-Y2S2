@@ -50,7 +50,12 @@ class DonorProfileDelete : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Toast.makeText(this, "Error deleting user data: $exception", Toast.LENGTH_LONG).show()
             }
+            .addOnCompleteListener {
+                Toast.makeText(this, "Your Account deleted successfully", Toast.LENGTH_LONG).show()
+            }
     }
+
+
 
 
 }
