@@ -39,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvDonor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="36dp"
@@ -75,7 +75,7 @@
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDonor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -90,7 +90,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="36dp"
@@ -134,7 +134,7 @@
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintTop_toBottomOf="@+id/tvStudent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -181,7 +181,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/donorCounter"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginStart="36dp"
@@ -241,7 +241,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/studentCounter"
                 android:layout_width="@dimen/btn_width"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginStart="36dp"
