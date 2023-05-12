@@ -11,7 +11,7 @@ import java.util.regex.Pattern
 
 class MakeDonation : AppCompatActivity() {
 
-   lateinit var fname: EditText
+    lateinit var fname: EditText
      lateinit var email: EditText
      lateinit var phone: EditText
      lateinit var category: EditText
