@@ -317,7 +317,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnCancel"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
@@ -325,13 +325,13 @@
                 android:fontFamily="@font/abeezee"
                 android:text="@string/txt_cancel"
                 app:cornerRadius="@dimen/btnRadius"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/btnRegister"
                 app:layout_constraintHorizontal_bias="0.354"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnRegister"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
