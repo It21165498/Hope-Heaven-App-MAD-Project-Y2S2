@@ -1,5 +1,24 @@
 package com.example.hopeheaven
 
+<<<<<<< HEAD
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.ImageButton
+import android.content.Intent
+
+
+class Home : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.home)
+
+        val imageButton3 = findViewById<ImageButton>(R.id.imageButton3)
+        imageButton3.setOnClickListener {
+            val intent = Intent(this, EventHome::class.java)
+            startActivity(intent)
+        }
+    }
+=======
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -56,4 +75,5 @@ class Home : Fragment() {
                 }
             }
     }
+>>>>>>> 65bc955c1a619c2e3361266032f121c593be7365
 }
