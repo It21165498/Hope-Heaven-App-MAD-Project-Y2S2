@@ -11,13 +11,14 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-
+import androidx.fragment.app.FragmentTransaction
 class DonationHistory : AppCompatActivity() {
 
     private lateinit var donationRecycleView:RecyclerView
     private lateinit var dbRef:DatabaseReference
     private lateinit var donationArrayList: ArrayList<DonationModel>
     private lateinit var backBtn : Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +34,7 @@ class DonationHistory : AppCompatActivity() {
 
         backBtn = findViewById(R.id.btnBack)
         backBtn.setOnClickListener {
-            val intent = Intent(this, DonationHistory::class.java)
-            intent.putExtra("FRAGMENT_TO_LOAD", "MY_FRAGMENT")
-            startActivity(intent)
-            finish()
+            navigateToHomeFragment()
         }
         val fragmentToLoad = intent.getStringExtra("FRAGMENT_TO_LOAD")
         if (fragmentToLoad == "MY_FRAGMENT") {
@@ -72,6 +70,12 @@ class DonationHistory : AppCompatActivity() {
     })
     }
 
-
+    private fun navigateToHomeFragment() {
+        val homeFragment = Home() // Replace `HomeFragment` with your actual fragment class
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.home, homeFragment) // Replace `R.id.fragment_container` with the actual ID of the container in your layout
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
+    }
 
 }
