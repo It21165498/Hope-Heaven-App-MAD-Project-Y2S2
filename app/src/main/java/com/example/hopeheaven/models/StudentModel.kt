@@ -1,5 +1,7 @@
 package com.example.hopeheaven.models
 
+import java.io.Serializable
+
 data class StudentModel(
     var name: String? = null,
     var age: String? = null,
@@ -12,4 +14,4 @@ data class StudentModel(
     var needs: String? = null
 
 
-)
+): Serializable
