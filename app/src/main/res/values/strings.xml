@@ -1,3 +1,105 @@
 <resources>
     <string name="app_name">Hope Heaven</string>
+    <string name="welcome_text">Welcome</string>
+    <string name="who_are_you">Who are you ?</string>
+    <string name="btn_student">Student</string>
+    <string name="btn_donor">Donor</string>
+    <string name="Alrdy_acc">Already have an account ?</string>
+    <string name="login_link_text"><u>Log In</u></string>
+    <string name="text_login">Login</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_pwd">Password</string>
+    <string name="forgot_pwd">Forgot Password ?</string>
+    <string name="dont_have_acc">Don\'t have an account ?</string>
+    <string name="register_now">Register Now</string>
+    <string name="txt_register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="school">School</string>
+    <string name="re_enter_pwd">Re-enter Password</string>
+    <string name="txt_cancel">Cancel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="student_profile">Student Profile</string>
+    <string name="scl">School</string>
+    <string name="phone">Phone</string>
+    <string name="from">From</string>
+    <string name="gender">Gender</string>
+    <string name="priciple_certificate">Principle Certificate</string>
+    <string name="student_info">Student Details</string>
+    <string name="donor_info">Donor Details</string>
+    <string name="personal_info">Personal Information</string>
+    <string name="achievements">Achievements</string>
+    <string name="needs">Needs</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="delete_acc">Delete Account</string>
+    <string name="update">Update</string>
+    <string name="delete_profile">Delete Account</string>
+    <string name="sure_msg">Are you sure, you want to delete your account ?</string>
+    <string name="delete">Delete</string>
+    <string name="delete_warning_msg">Note : If you delete your account you won\'t be able to login using this credentials again!!</string>
+    <string name="students">Students</string>
+    <string name="age">Age</string>
+    <string name="from_">"From : "</string>
+    <string name="view_profile">View Profile</string>
+    <string name="donate">Donate</string>
+    <string name="edt_profile_undelined"><u>Edit Profile</u></string>
+<<<<<<< HEAD
+
+
+    <string name="event_topic1"><![CDATA[Books & Backpack Donation]]></string>
+    <string name="location">At Thomian Collage Matara</string>
+    <string name="description1">Description : This program delivers school books and a school bag, sufficient for one year to children of families whose family faces severe economic problems and most times the children cannot go to school.</string>
+    <string name="events">UPCOMING EVENTS</string>
+    <string name="desc">Donate and Get benefits as a Team</string>
+    <string name="event_topic">event topic...</string>
+    <string name="_25">25</string>
+    <string name="apr">APR</string>
+    <string name="backpack_donation">Backpack Donation</string>
+    <string name="_12">12</string>
+    <string name="may">MAY</string>
+    <string name="book_donation">Book Donation</string>
+    <string name="_08">08</string>
+    <string name="stationary_donation">Stationary Donation</string>
+    <string name="jun">JUN</string>
+    <string name="to_donate">To Donate</string>
+    <string name="todo">TODO</string>
+    <string name="event_topic2">Event Topic</string>
+    <string name="email">Email</string>
+    <string name="join">JOIN</string>
+    <string name="cancel">CANCEL</string>
+    <string name="number_of_items">Number of items</string>
+    <string name="other_needed_items">Other needed items</string>
+    <string name="to_participate">To Participate</string>
+    <string name="other_needs">Other Needs</string>
+    <string name="join2">JOIN</string>
+    <string name="cancel2">CANCEL</string>
+    <string name="close">CLOSE</string>
+    <string name="close2">CLOSE</string>
+    <string name="update2">UPDATE</string>
+    <string name="my_events">MY EVENTS</string>
+    <string name="created_events">CREATED EVENTS</string>
+    <string name="attended">ATTENDED</string>
+    <string name="attended2">ATTENDED</string>
+    <string name="my_events2">MY EVENTS</string>
+    <string name="event_id">eventid</string>
+    <string name="only_for_event_creator">Only For Event Creator</string>
+    <string name="updatebutton">UPDATE</string>
+    <string name="student">STUDENT</string>
+    <string name="donor">DONOR</string>
+    <string name="join_with_us_as_a">JOIN WITH US AS A</string>
+    <string name="remove">REMOVE</string>
+    <string name="updateButton">updateButton</string>
+
+
+=======
+    <string name="acc_info">Account Details</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="title_home" />
+    <string name="title_dashboard" />
+    <string name="title_notifications" />
+>>>>>>> 65bc955c1a619c2e3361266032f121c593be7365
 </resources>
