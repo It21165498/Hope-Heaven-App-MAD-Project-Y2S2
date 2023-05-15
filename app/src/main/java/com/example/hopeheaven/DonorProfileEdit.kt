@@ -22,6 +22,7 @@ class DonorProfileEdit : AppCompatActivity()  {
     private lateinit var updateButton: Button
     private lateinit var cancelButton: Button
 
+
     private val user = FirebaseAuth.getInstance().currentUser
     private val firestoreDatabase = FirebaseFirestore.getInstance()
 
@@ -36,6 +37,7 @@ class DonorProfileEdit : AppCompatActivity()  {
         tvDelete   = findViewById(R.id.textView8)
         updateButton = findViewById(R.id.btnDPupdate)
         cancelButton=  findViewById(R.id.btnCancel)
+
 
         updateButton.setOnClickListener {
             updateUserData()

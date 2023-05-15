@@ -21,6 +21,7 @@ class DonorProfile : Fragment() {
     val fireStoreDatabase = FirebaseFirestore.getInstance()
     lateinit var myButton: Button
     lateinit var edtBtn:Button
+    private lateinit var makeDonationButton:Button
 
 
 
@@ -34,6 +35,11 @@ class DonorProfile : Fragment() {
         myButton = binding.btnHis
         myButton.setOnClickListener {
             val intent = Intent(activity, DonationHistory::class.java)
+            startActivity(intent)
+        }
+        makeDonationButton=binding.btnMakeDonation
+        makeDonationButton.setOnClickListener{
+            val intent = Intent(activity,MakeDonation::class.java)
             startActivity(intent)
         }
 

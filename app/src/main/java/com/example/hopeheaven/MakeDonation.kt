@@ -8,6 +8,9 @@ import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.regex.Pattern
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+
 
 class MakeDonation : AppCompatActivity() {
 
@@ -19,6 +22,7 @@ class MakeDonation : AppCompatActivity() {
      lateinit var location: EditText
      lateinit var date: EditText
      lateinit var btnSaveData: Button
+     lateinit var btnCancel:Button
     var count :Int =0
 
     private lateinit var dbRef: DatabaseReference
@@ -35,12 +39,17 @@ class MakeDonation : AppCompatActivity() {
         location = findViewById(R.id.location)
         date = findViewById(R.id.day)
         btnSaveData = findViewById(R.id.btnDonate)
+        btnCancel=findViewById(R.id.btnCancel)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Donations")
 
 
         btnSaveData.setOnClickListener {
             saveDonationData()
+        }
+
+        btnCancel.setOnClickListener {
+            navigateToHomeFragment()
         }
     }
 
@@ -97,7 +106,7 @@ class MakeDonation : AppCompatActivity() {
 
             dbRef.child(donationId).setValue(donation)
                 .addOnCompleteListener {
-                    Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Your donation recorded successfully", Toast.LENGTH_LONG).show()
 
                     fname.text.clear()
                     email.text.clear()
@@ -112,6 +121,15 @@ class MakeDonation : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Please fill in all the required fields correctly", Toast.LENGTH_LONG).show()
         }
+    }
+
+
+    private fun navigateToHomeFragment() {
+        val homeFragment = Home()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.home, homeFragment)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
     }
 
 }
