@@ -71,9 +71,9 @@ class DonationHistory : AppCompatActivity() {
     }
 
     private fun navigateToHomeFragment() {
-        val homeFragment = Home() // Replace `HomeFragment` with your actual fragment class
+        val homeFragment = Home()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.home, homeFragment) // Replace `R.id.fragment_container` with the actual ID of the container in your layout
+            .replace(R.id.home, homeFragment)
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             .commit()
     }
