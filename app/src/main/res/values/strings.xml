@@ -49,7 +49,7 @@
     <string name="acc_info">Account Details</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="title_home" />
-    <string name="title_dashboard" />
-    <string name="title_notifications" />
+    <string name="email">Email</string>
+    <string name="log_out"><u>Log Out</u></string>
+    <string name="select_pro_pic"><u>Select Profile Picture</u></string>
 </resources>

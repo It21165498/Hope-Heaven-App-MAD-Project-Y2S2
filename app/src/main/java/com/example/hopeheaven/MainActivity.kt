@@ -29,12 +29,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, isStudent.toString(), Toast.LENGTH_SHORT).show()
                 when(it.itemId) {
                     R.id.icon_home -> replaceFragment(Home())
-                    R.id.icon_students -> replaceFragment(StudentsList())
+                    R.id.icon_students -> replaceFragment(StudentList())
                     R.id.icon_donors -> replaceFragment(DonorList())
                     R.id.icon_profile -> if(isStudent) {
                         replaceFragment(StudentProfile())
                     } else {
-                         replaceFragment(DonorProfile())
+                        replaceFragment(DonorProfile())
                     }
                     else -> {
                         // handle other menu item clicks

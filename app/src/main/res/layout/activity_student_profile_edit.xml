@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="false">
+    android:fillViewport="false"
+    android:id="@+id/editProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
 
             <ImageView
                 android:id="@+id/ivBackEditProfile"
-                android:layout_width="48dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/back" />
@@ -30,17 +31,41 @@
                 android:id="@+id/tvProfileHeading"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/abeezee"
                 android:text="@string/edit_profile"
                 android:textColor="@color/primary_color"
-                android:textSize="32dp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
+
+        <ImageView
+            android:id="@+id/ivProPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/profilepic" />
+
+        <TextView
+            android:id="@+id/tvChangePic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="135dp"
+            android:text="@string/select_pro_pic"
+            android:textColor="@color/secondary_color" />
+
+        <Button
+            android:id="@+id/tvUploadImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary_color"
+            android:text="Upload Image"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/btnRadius" />
 
         <TextView
             android:id="@+id/textView33"
@@ -76,7 +101,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="Amal Perera"
+            android:hint="Enter your name.."
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +128,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="15"
+            android:hint="Enter your age - ex : 20"
             android:inputType="textPersonName"
             android:paddingLeft="10dp" />
 
@@ -127,7 +152,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="Horopathana maha vidyalaya"
+            android:hint="Enter your school"
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +179,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="0771234567"
+            android:hint="ex: 0771234567"
             android:inputType="phone"
             android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +206,7 @@
             android:background="@drawable/input_bg"
             android:ems="10"
             android:fontFamily="@font/abeezee"
-            android:hint="Horopathana"
+            android:hint="Ex : Matale"
             android:inputType="textPostalAddress"
             android:paddingLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -294,7 +319,7 @@
             android:ems="10"
             android:fontFamily="@font/abeezee"
             android:gravity="start|top"
-            android:hint="Grade 7 class 1st, Carrom Championship 2nd"
+            android:hint="Enter your Achievements - Ex :Grade 7 class 1st, Carrom Championship 2nd"
             android:inputType="textMultiLine"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
@@ -332,7 +357,7 @@
             android:ems="10"
             android:fontFamily="@font/abeezee"
             android:gravity="start|top"
-            android:hint="1 school bag, a pair of black color shoe"
+            android:hint="Enter your needs  - Ex : 1 school bag, a pair of black color shoe"
             android:inputType="textMultiLine"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
@@ -346,7 +371,7 @@
             android:fontFamily="@font/abeezee"
             android:paddingLeft="20dp"
             android:text="@string/delete_acc"
-            android:textColor="@color/secondary_color"
+            android:textColor="@color/warning_red_color"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -355,22 +380,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnCancel"
-                android:layout_width="130dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="@color/heading_hash"
-                android:fontFamily="@font/abeezee"
-                android:text="@string/txt_cancel"
-                app:cornerRadius="@dimen/btnRadius"
-                app:layout_constraintEnd_toStartOf="@+id/btnRegister"
-                app:layout_constraintHorizontal_bias="0.354"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/btnUpdate"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
@@ -380,6 +392,20 @@
                 android:text="@string/update"
                 app:cornerRadius="@dimen/btnRadius"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnUpdateCancel"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/heading_hash"
+                android:fontFamily="@font/abeezee"
+                android:text="@string/txt_cancel"
+                app:cornerRadius="@dimen/btnRadius"
+                app:layout_constraintEnd_toStartOf="@+id/btnUpdate"
+                app:layout_constraintHorizontal_bias="0.354"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

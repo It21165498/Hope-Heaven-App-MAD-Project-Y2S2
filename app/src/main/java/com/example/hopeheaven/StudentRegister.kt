@@ -79,8 +79,10 @@ class StudentRegister : AppCompatActivity() {
                             }else if (radioGenderFemale.isChecked){
                                 selectedGender = "Female"
                             }
+                            val user = FirebaseAuth.getInstance().currentUser
 
                             data = hashMapOf(
+                                "uid" to user!!.uid.toString(),
                                 "email" to email,
                                 "name" to fName,
                                 "school" to school,
@@ -88,7 +90,9 @@ class StudentRegister : AppCompatActivity() {
                                 "age" to age,
                                 "phone" to phone,
                                 "gender" to selectedGender,
-                                "userType" to "Student"
+                                "userType" to "Student",
+                                "achievements" to "",
+                                "needs" to ""
                             )
 
                         }else{

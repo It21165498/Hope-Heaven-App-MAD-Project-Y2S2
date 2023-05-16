@@ -58,4 +58,38 @@ class ExampleInstrumentedTest {
 
 
 
+
+
+//    val scenario = launchFragmentInContainer<Home>()
+
+    @get:Rule
+    var activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Test //when clicked home icon in the bottom nav bar,checking is Home fragment is visible or not
+    fun clickHomeIcon_showsHomeFragment() {
+
+        onView(withId(R.id.icon_home)).perform(click())
+        onView(withId(R.id.home)).check(matches(isDisplayed()))
+        val expectedFragment = Home::class.java.name
+
+        val currentFragment = activityRule.scenario.onActivity { activity ->
+            activity.supportFragmentManager.findFragmentById(R.id.fragmentContainer)
+        }
+        val actualFragment = currentFragment?.javaClass?.name
+        assertEquals(expectedFragment, actualFragment)
+    }
+
+
+    @Test
+    fun clickEditProfileButton_opensEditProfileActivity() {
+        activityRule.scenario.onActivity { activity ->
+            val fragment = StudentProfile()
+            activity.supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit()
+        }
+
+        onView(withId(R.id.tvEditProfile)).perform(click())
+        onView(withId(R.id.editProfile)).check(matches(isDisplayed()))
+    }
 }

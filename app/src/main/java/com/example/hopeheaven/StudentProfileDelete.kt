@@ -1,59 +1,96 @@
 package com.example.hopeheaven
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+import com.example.hopeheaven.databinding.ActivityStudentProfileDeleteBinding
+import com.example.hopeheaven.databinding.ActivityStudentProfileEditBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class StudentProfileDelete : AppCompatActivity() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [StudentProfileDelete.newInstance] factory method to
- * create an instance of this fragment.
- */
-class StudentProfileDelete : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    private lateinit var binding : ActivityStudentProfileDeleteBinding
+    private var storageReference = Firebase.storage
+    lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        binding = ActivityStudentProfileDeleteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        auth = Firebase.auth
+        var user = auth.currentUser
+        val fireStoreDatabase = FirebaseFirestore.getInstance() //Get firestore db
+        storageReference = FirebaseStorage.getInstance()
+
+        binding.btnCancelDelete.setOnClickListener {
+            finish()
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student_profile_delete, container, false)
-    }
+        binding.btnDeleteAcc.setOnClickListener {
+            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment StudentProfileDelete.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            StudentProfileDelete().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+            user?.delete()
+                ?.addOnSuccessListener {
+                    Toast.makeText(this, "user auth deleted", Toast.LENGTH_SHORT).show()
+
+
+                    val documentRef  = fireStoreDatabase.collection("Users").document(user?.uid.toString())
+                    val documentRefpic  = fireStoreDatabase.collection("UsersPhotos").document(user?.uid.toString())
+
+                    documentRef.delete()
+                        .addOnSuccessListener {
+                            // Document deleted successfully
+                            documentRefpic.delete().addOnSuccessListener {
+
+                            }.addOnFailureListener {
+
+                            }
+
+                            Toast.makeText(this, "Succefully deleted account", Toast.LENGTH_SHORT).show()
+                            auth.signOut()
+                            val intent = Intent(this, StudentLogin::class.java)
+                            startActivity(intent)// Start the StudentLogin activity
+                            finish() //finish current activity
+
+                        }
+                        .addOnFailureListener { exception ->
+                            // An error occurred while deleting the document
+                            // Handle the error here
+                        }
+
+
                 }
-            }
+                ?.addOnFailureListener { exception ->
+                    // An error occurred while deleting the user account
+                    // Handle the error here
+                }
+
+
+            val imageRef = storageReference.getReference("images").child("${user?.uid}/profile.jpg")
+
+            imageRef.delete()
+                .addOnSuccessListener {
+                    // Image file deleted successfully
+
+                }
+                .addOnFailureListener { exception ->
+                    // An error occurred while deleting the image file
+                    // Handle the error here
+                }
+
+
+
+            // User account deleted successfully
+
+
+
+
+        }
     }
 }
